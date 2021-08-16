@@ -3,7 +3,7 @@ import urllib.request
 
 
 class ImageURLExtractor(object):
-    def __init__(self, url, prefix, suffix):
+    def __init__(self, url=None, prefix=None, suffix=None):
         self._url = url
         self._prefix = prefix
         self._suffix = suffix
@@ -38,3 +38,7 @@ class ImageURLExtractor(object):
     def filter_out_str_that_contains_substrings(list_of_image_urls, exclude_substrings):
         return [x for x in list_of_image_urls if not any([y in x for y in exclude_substrings])]
 
+    @staticmethod
+    def display_items_in_a_row(items, num_of_items_in_a_row, sep=' '):
+        for i in range(len(items)//num_of_items_in_a_row):
+            print(sep.join(items[i*num_of_items_in_a_row:(i+1)*num_of_items_in_a_row]))
