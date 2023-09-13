@@ -1,0 +1,5 @@
+name: crop
+channels:
+  - anaconda
+dependencies:
+  - pillow
